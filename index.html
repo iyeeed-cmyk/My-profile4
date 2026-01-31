@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iyed Wederni | Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="overlay" id="overlay" onclick="toggleSettings()"></div>
+    
+    <div class="settings-menu" id="settingsMenu">
+        <div class="settings-header">
+            <span>Settings</span>
+            <span style="cursor:pointer;" onclick="toggleSettings()">✕</span>
+        </div>
+        
+        <div class="settings-item" onclick="changeLanguage()">
+            <i class="fas fa-language"></i>
+            <span>Switch to Arabic</span>
+        </div>
+        
+        <div class="settings-item" onclick="shareProfile()">
+            <i class="fas fa-share-alt"></i>
+            <span>Share Profile</span>
+        </div>
+    </div>
+
+    <header>
+        <button class="icon-btn" onclick="toggleSettings()">
+            <i class="fas fa-cog"></i> 
+        </button>
+        <button class="icon-btn" onclick="toggleTheme()">
+            <i class="fas fa-moon" id="themeIcon"></i> 
+        </button>
+    </header>
+
+    <main>
+        <div class="profile-card">
+            <img src="https://ui-avatars.com/api/?name=Iyed+Wederni&background=3498db&color=fff" alt="Iyed Wederni" class="profile-img">
+            
+            <h1>Iyed Wederni</h1>
+            
+            <p class="bio-text">
+                Hello! I am a passionate developer. This is my personal space where I share my work and thoughts. 
+                <br>
+                - New Web Developer
+                <br>
+                - You can contact me in those apps:
+            </p>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/iyed.wederni.2025" target="_blank" class="social-btn">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                
+                <a href="https://www.instagram.com/iyeed__weed/" target="_blank" class="social-btn">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                
+                <a href="https://github.com/iyeeed-cmyk" target="_blank" class="social-btn">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="teaser-section">
+            <div class="teaser-content">
+                <h3>🚀 Something Big is Coming!</h3>
+                <p>I am currently working on a brand new, cutting-edge website. Stay tuned for a unique digital experience.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

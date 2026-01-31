@@ -1,0 +1,182 @@
+/* === متغيرات الألوان (Theme Variables) === */
+:root {
+    --bg-color: #f4f4f9;
+    --container-bg: #ffffff;
+    --text-color: #333333;
+    --text-secondary: #666666;
+    --accent-color: #3498db;
+    --hover-color: #2980b9;
+    --shadow: 0 4px 20px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* وضع الظلام */
+body.dark-mode {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-secondary: #aaaaaa;
+    --shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* === الشريط العلوي === */
+header {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: var(--transition);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.icon-btn:hover { background-color: rgba(128,128,128,0.1); }
+
+/* === القائمة الجانبية للإعدادات === */
+.settings-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* مخفية في البداية */
+    width: 250px;
+    height: 100vh;
+    background-color: var(--container-bg);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: var(--transition);
+    padding: 20px;
+}
+
+.settings-menu.active { left: 0; }
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.settings-item:hover { background-color: rgba(128,128,128,0.1); }
+
+/* === المحتوى الرئيسي === */
+main {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 40px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.profile-card {
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    margin-bottom: 20px;
+    background-color: #ddd;
+}
+
+h1 { margin-bottom: 10px; font-size: 2rem; }
+
+.bio-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* === روابط التواصل الاجتماعي === */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.social-btn {
+    text-decoration: none;
+    color: var(--container-bg);
+    background-color: var(--text-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-btn:hover {
+    transform: translateY(-5px);
+    background-color: var(--accent-color);
+}
+
+/* === الخبر العاجل (Teaser) === */
+.teaser-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.teaser-content h3 { margin-bottom: 10px; }
+.teaser-content p { font-size: 0.9rem; opacity: 0.9; }
+
+/* تأثيرات بسيطة */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Overlay لإغلاق القائمة عند الضغط خارجها */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 900;
+}
+.overlay.active { display: block; }
